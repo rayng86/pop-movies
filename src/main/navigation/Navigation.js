@@ -2,12 +2,13 @@
 
 import React from "react";
 import "./Navigation.css";
+import Selection from "./components/Selection";
 
 class Navigation extends React.Component {
   render() {
     return (
       <section className="navigation">
-        Navigation
+        <Selection />
       </section>
     )
   }
