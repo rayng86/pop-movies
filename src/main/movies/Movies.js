@@ -33,7 +33,7 @@ class Movies extends React.Component {
         <ul className="movies">
           {
             this.state.movies.map( movie => (
-              <MovieListItem key={movie.id} title={movie.title} />
+              <MovieListItem key={movie.id} movie={movie} />
             ))
           }
         </ul>
