@@ -1,24 +1,17 @@
-import React from 'react';
-import { render } from 'react-dom';
+// Selection.js
 
-class Selection extends React.Component {
-  state = {
-    genre: 'comedy'
-  }
+import React from "react";
+import "./Selection.css"
 
-  onGenreChange = event => {
-    this.setState({ genre: event.target.value });
-  }
-
-  render() {
-    return (
-      <select value={this.state.genre} onChange={this.onGenreChange}>
-        <option value="comedy">Comedy</option>
-        <option value="action">Action</option>
-        <option value="drama">Drama</option>
-      </select>
-    )
-  }
-}
+const Selection = ({genre, onGenreChange }) => (
+  <div className="selection">
+    <label>Genre</label>
+    <select value={genre} onChange={onGenreChange}>
+      <option value="comedy">Comedy</option>
+      <option value="action">Action</option>
+      <option value="drama">Drama</option>
+    </select>
+  </div>
+);
 
 export default Selection;
