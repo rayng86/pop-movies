@@ -5,21 +5,23 @@ import "./Main.css"
 import Navigation from "./navigation/Navigation";
 import Movies from "./movies/Movies";
 
+const currentYear = new Date().getFullYear();
+
 class Main extends React.Component {
  state = {
    movies: [],
    total_pages: 1,
    page: 1,
-   url: `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`,
+   genreUrl: `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`,
    moviesUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`,
    genre: "Comedy",
    genres: [],
    year: {
      label: "year",
      min: 1990,
-     max: 2017,
+     max: currentYear,
      step: 1,
-     value: { min: 2000, max: 2017 }
+     value: { min: 2000, max: currentYear }
    },
    rating: {
      label: "rating",
